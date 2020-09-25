@@ -1,12 +1,14 @@
-console.clear()
-
+require('dotenv').config()
 const express = require('express');
 const app = express();
+const port = process.env.PORT | 80
+
+console.clear()
 
 var server = require('http').createServer(app);
-var io = require('socket.io').listen(app.listen(3000, (err) => {
+var io = require('socket.io').listen(app.listen(port, (err) => {
     if(err) return console.error(err)
-    console.log(`Server started and running on port: ${3000}`)
+    console.log(`Server started and running on port: ${port}`)
 }));
 
 app.use(express.static(__dirname + "/public"))
