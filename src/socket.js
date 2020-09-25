@@ -1,4 +1,4 @@
-const socket = io.connect('http://localhost:3000');
+const socket = io.connect(address);
 
 export function init() {
     socket.on('connect', function(data) {
