@@ -1,39 +1,36 @@
 <script>
 	import PlayerArea from './Player_area.svelte'
-	import Timer from './Timer.svelte'
 	import Menu from './Menu.svelte'
 	import { game, players } from './store.js'
-	import { init, listen } from './socket.js'
+	import { init, send, listen } from './socket.js'
 
 	init();
-
-	listen('GameStart', (data) => {
-		$game = data
-	})
 
 </script>
 
 <div id="game">
-	{#each $players as player, i }
-		<PlayerArea index="{i}"/>
-	{/each}
+	<div id="player">
+		{#each $players as player, i }
+			<PlayerArea index="{i}"/>
+		{/each}
+	</div>
+	<Menu />
 </div>
-
-{#if $game.one_connected & !$game.started}
-	<Menu/>
-{/if}
-
-{#if $game.started}
-	<Timer/>
-{/if}
 
 
 <style lang="scss">
 	h1 {
 		color: red;
 	}
-	#game {
+	#player {
 		display: flex;
 		flex-wrap: wrap;
+	}
+	#game {
+		max-width: 1000px;
+		width: 100%;
+        position: fixed;
+        left: 50%;
+        transform: translate(-50%, 0);
 	}
 </style>

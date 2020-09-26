@@ -1,6 +1,6 @@
-#game.svelte-1adpwea{display:flex;flex-wrap:wrap}
-#menu.svelte-1hc98ti.svelte-1hc98ti{padding:10px;position:fixed;top:50%;left:50%;transform:translate(-50%, -50%);background:rgba(0, 0, 0, 0.4)}#menu.svelte-1hc98ti button.svelte-1hc98ti{background:none;border:none;border-bottom:1px solid green;color:red;font-size:20px}
-div.svelte-ikdfwp.svelte-ikdfwp{position:relative;border:solid 1px black;width:50vw;height:50vh}div.svelte-ikdfwp #connecting.svelte-ikdfwp{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0, 0, 0, 0.9);text-align:center;vertical-align:middle}div.svelte-ikdfwp #connecting .load.svelte-ikdfwp{color:red}div.svelte-ikdfwp img.svelte-ikdfwp{display:block;margin:0 auto;width:50%}
-#timer.svelte-vek380{position:fixed;top:50%;left:50%;transform:translate(-50%, -50%);background:rgba(0, 0, 0, 0.226);color:white;font-size:150%}
+#player.svelte-hqhnej{display:flex;flex-wrap:wrap}#game.svelte-hqhnej{max-width:1000px;width:100%;position:fixed;left:50%;transform:translate(-50%, 0)}
+#menu.svelte-1qjaym0.svelte-1qjaym0{display:flex;padding:10px;position:fixed;top:50%;left:50%;transform:translate(-50%, -50%);background:rgba(0, 0, 0, 0.4);flex-direction:column}#menu.svelte-1qjaym0 button.svelte-1qjaym0{background:none;border:none;border-bottom:1px solid green;color:red;font-size:20px}#timer.svelte-1qjaym0.svelte-1qjaym0{position:fixed;top:50%;left:50%;transform:translate(-50%, -50%);background:rgba(0, 0, 0, 0.226);color:white;font-size:150%}
+div.svelte-baavhi.svelte-baavhi{position:relative;border:solid 1px black;width:50%;height:50vh}div.svelte-baavhi .shop.svelte-baavhi{position:absolute;top:100px;height:auto;border:none;padding-left:10px}div.svelte-baavhi #connecting.svelte-baavhi{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0, 0, 0, 0.9);text-align:center;vertical-align:middle}div.svelte-baavhi #connecting .load.svelte-baavhi{color:red}div.svelte-baavhi img.svelte-baavhi{position:absolute;right:10px;width:50%}
+div.svelte-of3h6s{padding:3px;padding-left:10px;border-bottom:solid 1px black}
 
 /*# sourceMappingURL=bundle.css.map */

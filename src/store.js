@@ -8,7 +8,8 @@ export const players = writable([
         amount: 0,
         me: false,
         connected: false,
-        not_me_connected: false
+        not_me_connected: false,
+        aps: 1
     },
     {
         name: "player1",
@@ -17,7 +18,8 @@ export const players = writable([
         amount: 0,
         me: false,
         connected: false,
-        not_me_connected: false
+        not_me_connected: false,
+        aps: 1
     },
     {
         name: "player2",
@@ -26,7 +28,8 @@ export const players = writable([
         amount: 0,
         me: false,
         connected: false,
-        not_me_connected: false
+        not_me_connected: false,
+        aps: 1
     },
     {
         name: "player3",
@@ -35,14 +38,15 @@ export const players = writable([
         amount: 0,
         me: false,
         connected: false,
-        not_me_connected: false
+        not_me_connected: false,
+        aps: 1
     }
 ]);
 
 export const game = writable({
     one_connected: false,
     started: false,
-    timer: 100*60*0.5, // 5 min
+    timer: 1000*60*2,
     start_time: Date.now(),
     end_time: 0
 })

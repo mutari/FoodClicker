@@ -44,7 +44,20 @@ io.on('connection', function(client) {
     })
 
     client.on('GameStart', (game) => {
+        console.log('awfijawifjia')
         client.broadcast.emit('GameStart', game)
+    })
+
+    client.on('Update', (player) => {
+        players.forEach(p => {
+            if(p.id == player.id)
+                player.posID = p.posID
+        })
+        client.broadcast.emit('Update', player)
+    })
+
+    client.on('ShopUpdate', (shop) => {
+        client.broadcast.emit('ShopUpdate', shop)
     })
 
 });

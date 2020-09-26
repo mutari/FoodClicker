@@ -1,17 +1,10 @@
 <script>
-
+    import Shop from './Shop.svelte'
     import { game, players } from './store.js'
     import { send, listen } from './socket.js'
     
     export let index;
     let username
-
-    function clickFunction() {
-        if($players[index].connected) {
-            $players[index].amount += 1
-        }
-    }
-
 
     function connect() {
         console.log("username: ", username)
@@ -56,8 +49,12 @@
                 }
             });
         })
+    }
 
-
+    function clickFunction() {
+        if($players[index].connected) {
+            $players[index].amount += $players[index].aps
+        }
     }
 
 </script>
@@ -67,7 +64,16 @@
     <h1>{$players[index].name}</h1>
     <h3>points: {$players[index].amount}</h3>
 
-    <img src="{$players[index].path}" alt="click image" on:click="{clickFunction}">
+    {#if $players[index].connected}
+        <img src="{$players[index].path}" alt="click image" on:click="{clickFunction}">
+    {:else}
+        <img src="{$players[index].path}" alt="click image">
+    {/if}
+
+    <div class="shop">
+        <Shop name="Upgrade1" dis="This is upgrade 1" startPrice="10" modules="2" aps="1" playerIndex="{index}"/>
+        <Shop name="Upgrade2" dis="This is upgrade 2" startPrice="400" modules="1.5" aps="4" playerIndex="{index}"/>
+    </div>
 
     {#if !$game.started}
         <div id="connecting">
@@ -94,8 +100,16 @@
 
         position: relative;
         border: solid 1px black;
-        width: 50vw;
+        width: 50%;
         height: 50vh;
+
+        .shop {
+            position: absolute;
+            top: 100px;
+            height: auto;
+            border: none;
+            padding-left: 10px;
+        }
 
         #connecting {
             position: absolute;
@@ -114,8 +128,8 @@
         }
 
         img {
-            display: block;
-            margin: 0 auto;
+            position: absolute;
+            right: 10px;
             width: 50%;
         }
 
